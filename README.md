@@ -41,3 +41,10 @@ The server should now start running and you should view the jupyter hub home pag
 
 Once you open one of the notebooks, you should be able to see the kernels we created, one called `tensorflow` and one called `tensorflow_gpu`.
 The `tensorflow_gpu` kernel is only needed to train the GP model, so if you are loading an existing model you can run everything with the `tensorflow` kernel.
+
+## Posterior samples
+The posterior samples for GW150914 can be found on my own directory (file was too large to be uploaded to git), you can copy them by running:
+```bash
+cp ~/virginia.demilio/bilby_results_files/GW150914_data0_1126259462-391_analysis_H1L1_dynesty_merge_result.json .
+```
+Alternatively you can download the full set of posterior samples from the [GWTC-1 public release page](https://dcc.ligo.org/LIGO-P2000193/public). I downloaded the "Original bilby result files" using `wget` command.
