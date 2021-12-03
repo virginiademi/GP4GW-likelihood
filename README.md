@@ -7,7 +7,37 @@ The GP model is built using `GPFlow` and `TensorFlow`.
 We built a `gp4gw` package which allows to load and prepare GW data for the modelling step. The package also allows to sample the modelled likelihood multiplied by the analytical priors in order to obtain more posterior samples in any desired region of the parameter space.
 
 ## Set-up on Eyas cluster
+We need to create two virtual environments:
+* one for `TensorFlow-GPU`, to run the GP model construction
+* one for regular `TensorFlow` (CPU), to run the sampling over the surrogate model
 
+The following steps will have to be repeated twice (`TensorFlow-GPU` version in brackets):
+```python
+conda create -n tensorflow (tensorflow_gpu)
+source activate tensorflow (tensorflow_gpu)
+conda install tensorflow==2.4.1 (tensorflow_gpu==2.4.1)
+conda install tensorflow_probability==0.11
+conda install ipykernel 
+python -m ipykernel install --user --name tensorflow (tensorflow_gpu)
+```
+Once the environments have been set-up, we install the dependencies required by `gp4gw` (again, this step needs to be repeated for both environments).
+```
+mv gp4gw
+pip install -r requirements.txt
+python setup.py develop
+```
 ## Running notebooks
+To run the notebooks you need to set-up a jupyter hub session.
+On one terminal window run:
+```bash
+jupyter notebook --no-browser --port=8080 --debug
+```
+this command will initialise a server and you will have to copy paste the localhost url onto a new browser page.
+To be able to actually start the server you need to open a new terminal window and run:
+```bash
+ssh -L 8080:localhost:8080 user.name@eyas.cf.ac.uk
+```
+The server should now start running and you should view the jupyter hub home page.
 
-## Saving models 
+Once you open one of the notebooks, you should be able to see the kernels we created, one called `tensorflow` and one called `tensorflow_gpu`.
+The `tensorflow_gpu` kernel is only needed to train the GP model, so if you are loading an existing model you can run everything with the `tensorflow` kernel.
