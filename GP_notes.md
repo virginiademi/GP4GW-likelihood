@@ -9,6 +9,7 @@ In this project we employ Deep Kernel Learning, using:
 [Towardsdatascience blog](https://towardsdatascience.com/variational-gaussian-process-what-to-do-when-things-are-not-gaussian-41197039f3d4)
 * **Sparse Variational GP for large data sets**:
 [Towardsdatascience blog](https://towardsdatascience.com/sparse-and-variational-gaussian-process-what-to-do-when-data-is-large-2d3959f430e7)
+* **Inducing points selection**: [Paper 2021](https://arxiv.org/pdf/2010.09370.pdf)
 # Deep kernel learning
 * [Wilson 2016](http://proceedings.mlr.press/v51/wilson16.pdf)
 * [Promises and Pitfalls of DKL - Rasmussen 2021](https://arxiv.org/pdf/2102.12108.pdf)
@@ -26,3 +27,7 @@ Active Learning Accelerated Bayesian Inference [ALABI - J.Birky](https://github.
 
 * Effects of varying kernel hyper-parameters: lenghtscale, variance, likelihood noise
  ![image](https://user-images.githubusercontent.com/32883514/144617566-ffaa4ab2-a4ca-4090-9a59-21b849664e1b.png)
+
+# Investigations
+Tried various kernels and combinations of them (addition vs multiplication, Rational Quadratic vs Squared Exponential, Polynomial and ArcCosine kernels).
+TO DO: write summary of tests done so far.
