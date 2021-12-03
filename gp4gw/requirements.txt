@@ -1,0 +1,8 @@
+tensorflow>=2.1
+tensorflow-probability==0.11
+gpflow>=2.0
+bilby
+arviz
+astropy==4.1
+sklearn
+corner
