@@ -9,7 +9,7 @@ In this project we employ Deep Kernel Learning, using:
 [Towardsdatascience blog](https://towardsdatascience.com/variational-gaussian-process-what-to-do-when-things-are-not-gaussian-41197039f3d4)
 * **Sparse Variational GP for large data sets**:
 [Towardsdatascience blog](https://towardsdatascience.com/sparse-and-variational-gaussian-process-what-to-do-when-data-is-large-2d3959f430e7)
-* **Deep kernel learning**: 
+# Deep kernel learning
 * [Wilson 2016](http://proceedings.mlr.press/v51/wilson16.pdf)
 * [Promises and Pitfalls of DKL - Rasmussen 2021](https://arxiv.org/pdf/2102.12108.pdf)
 
@@ -18,7 +18,7 @@ For this application, we don't want predicted distribution to be constrained, we
 
 * **GPSS2020**: Deep Gaussian Processes explained by Neil Lawrence [here](http://inverseprobability.com/talks/notes/deep-gps.html)
 
-* **Similar work**
+# Similar work
 
 15D GW deep learning [Green 2020](https://arxiv.org/pdf/2008.03312.pdf) <br/>
 Reconstructing probability distributions with GPs [McClintock 2019](https://arxiv.org/abs/1905.09299)
