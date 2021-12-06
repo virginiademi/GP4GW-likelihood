@@ -11,6 +11,8 @@ In this project we employ Deep Kernel Learning, using:
 [Towardsdatascience blog](https://towardsdatascience.com/sparse-and-variational-gaussian-process-what-to-do-when-data-is-large-2d3959f430e7)
 * **Inducing points selection**: [Paper 2021](https://arxiv.org/pdf/2010.09370.pdf)
 # Deep kernel learning
+DKL use a neural network to map inputs to points in an intermediate feature space, which is then used as the input space for a GP. The network parameters can be treated as hyperparameters of the kernel, and thus are optimized with respect to the (log) marginal likelihood, as in standard GP inference.
+
 * [Wilson 2016](http://proceedings.mlr.press/v51/wilson16.pdf)
 * [Promises and Pitfalls of DKL - Rasmussen 2021](https://arxiv.org/pdf/2102.12108.pdf)
 
@@ -29,5 +31,12 @@ Active Learning Accelerated Bayesian Inference [ALABI - J.Birky](https://github.
  ![image](https://user-images.githubusercontent.com/32883514/144617566-ffaa4ab2-a4ca-4090-9a59-21b849664e1b.png)
 
 # Investigations
-Tried various kernels and combinations of them (addition vs multiplication, Rational Quadratic vs Squared Exponential, Polynomial and ArcCosine kernels).
-TO DO: write summary of tests done so far.
+Some tests that were done:
+- Use exact inference scheme on 8D with less points, worst results than using all points and sparse GP
+- Adding RBFxMatern + Periodic, adding RBF+Matern+Periodic
+- Replaced RBF with RationalQuardatic
+- Tried single periodic kernel for each periodic dimension with period bounds specified
+- Tried both Polynomial and ArcCosine as base kernel
+- Tried selecting inducing points with *[RobustGP](https://github.com/markvdw/RobustGP)*
+- Experimented with variations of kernel architectures, more layers vs more nodes: the complexity of the model increases with the number of nodes; MAE for some architectures are noted in `GW150914.ipynb`.
+Possible things to look into: rigorous grid search of optimal NN architecture, 10-D injection example.
