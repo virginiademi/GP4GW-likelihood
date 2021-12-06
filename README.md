@@ -30,17 +30,19 @@ python setup.py develop
 To run the notebooks you need to set-up a jupyter hub session.
 On one terminal window run:
 ```bash
-jupyter notebook --no-browser --port=8080 --debug
+jupyter notebook --no-browser --port=8084 --debug
 ```
 this command will initialise a server and you will have to copy paste the localhost url onto a new browser page.
 To be able to actually start the server you need to open a new terminal window and run:
 ```bash
-ssh -L 8080:localhost:8080 user.name@eyas.cf.ac.uk
+ssh -L 8084:localhost:8084 user.name@eyas.cf.ac.uk
 ```
 The server should now start running and you should view the jupyter hub home page.
 
 Once you open one of the notebooks, you should be able to see the kernels we created, one called `tensorflow` and one called `tensorflow_gpu`.
 The `tensorflow_gpu` kernel is only needed to train the GP model, so if you are loading an existing model you can run everything with the `tensorflow` kernel.
+
+**NB** Running two notebooks at the same time might cause Out Of Memory errors (OOM), so only work on one notebook at a time.
 
 ## Posterior samples
 The posterior samples for GW150914 can be found on my own directory (file was too large to be uploaded to git), you can copy them by running:
