@@ -19,7 +19,6 @@ class DeepKernel(gpflow.kernels.Kernel):
                     tf.keras.layers.Dense(128, input_dim=data_dim, activation=tf.keras.layers.LeakyReLU(alpha=0.1), dtype=tf.float64),
                 tf.keras.layers.Dense(128, input_dim=data_dim, activation=tf.keras.layers.LeakyReLU(alpha=0.1), dtype=tf.float64),
                 tf.keras.layers.Dense(128, input_dim=data_dim, activation=tf.keras.layers.LeakyReLU(alpha=0.1), dtype=tf.float64),
-                tf.keras.layers.Dense(128, input_dim=data_dim, activation=tf.keras.layers.LeakyReLU(alpha=0.1), dtype=tf.float64),
                     tf.keras.layers.Dense(output_dim, dtype=tf.float64)
                                           ])
             self.feature_extractor.build()
